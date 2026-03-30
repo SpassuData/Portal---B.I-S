@@ -11,8 +11,8 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
         <!-- RH -->
-        <div onclick="window.open('{{ dashboards.rh }}')" 
-             class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all cursor-pointer p-6">
+        <a href="/area/rh/" 
+           class="block bg-white rounded-xl shadow-md hover:shadow-xl transition-all p-6">
 
             <div class="h-2 bg-[#ff8c00] rounded-t-xl"></div>
 
@@ -23,15 +23,17 @@
                     Indicadores de RH, Folha e Horas Extras
                 </p>
 
-                <button class="mt-4 px-4 py-2 bg-[#ff8c00] text-white rounded-lg">
-                    Acessar Dashboard
-                </button>
+                <div class="mt-4">
+                    <span class="inline-block px-4 py-2 bg-[#ff8c00] text-white rounded-lg">
+                        Acessar módulo
+                    </span>
+                </div>
             </div>
-        </div>
+        </a>
 
         <!-- Financeiro -->
-        <div onclick="window.open('{{ dashboards.fin }}')" 
-             class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all cursor-pointer p-6">
+        <a href="/area/fin/" 
+           class="block bg-white rounded-xl shadow-md hover:shadow-xl transition-all p-6">
 
             <div class="h-2 bg-[#004a99] rounded-t-xl"></div>
 
@@ -42,15 +44,17 @@
                     DRE, Fator K e Provisões estratégicas
                 </p>
 
-                <button class="mt-4 px-4 py-2 bg-[#004a99] text-white rounded-lg">
-                    Acessar Dashboard
-                </button>
+                <div class="mt-4">
+                    <span class="inline-block px-4 py-2 bg-[#004a99] text-white rounded-lg">
+                        Acessar módulo
+                    </span>
+                </div>
             </div>
-        </div>
+        </a>
 
         <!-- Operacional -->
-        <div onclick="window.open('{{ dashboards.op }}')" 
-             class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all cursor-pointer p-6">
+        <a href="/area/op/" 
+           class="block bg-white rounded-xl shadow-md hover:shadow-xl transition-all p-6">
 
             <div class="h-2 bg-[#2ecc71] rounded-t-xl"></div>
 
@@ -61,11 +65,13 @@
                     Status de projetos e integração de sistemas
                 </p>
 
-                <button class="mt-4 px-4 py-2 bg-[#2ecc71] text-white rounded-lg">
-                    Acessar Dashboard
-                </button>
+                <div class="mt-4">
+                    <span class="inline-block px-4 py-2 bg-[#2ecc71] text-white rounded-lg">
+                        Acessar módulo
+                    </span>
+                </div>
             </div>
-        </div>
+        </a>
 
     </div>
 </div>

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="p-6 max-w-7xl mx-auto">
+
+    <!-- Breadcrumb -->
+    <div class="text-sm text-gray-500 mb-4">
+        <a href="/">Home</a> > {{ data.titulo }}
+    </div>
+
+    <h1 class="text-3xl font-bold mb-6">{{ data.titulo }}</h1>
+
+    <!-- GRID DE DASHBOARDS -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        {% for d in data.dashboards %}
+
+        <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all p-6">
+
+            <h3 class="text-xl font-semibold">{{ d.nome }}</h3>
+
+            <p class="text-gray-600 mt-2">
+                {{ d.descricao }}
+            </p>
+
+            <button onclick="window.open('{{ d.link }}')"
+                    class="mt-4 px-4 py-2 text-white rounded {{ data.cor }}">
+                Abrir Dashboard
+            </button>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}

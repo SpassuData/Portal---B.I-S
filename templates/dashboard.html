@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="max-w-5xl mx-auto p-6">
+
+    <!-- Breadcrumb -->
+    <div class="text-sm text-gray-500 mb-4">
+        <a href="/" class="hover:underline">Home</a> > {{ data.titulo }}
+    </div>
+
+    <!-- Título -->
+    <h1 class="text-3xl font-bold">{{ data.titulo }}</h1>
+    <p class="text-gray-600 mt-2">{{ data.descricao }}</p>
+
+    <!-- Card principal -->
+    <div class="mt-6 bg-white rounded-xl shadow-lg p-6">
+
+        <div class="flex items-center justify-between">
+            <div>
+                <h2 class="text-xl font-semibold">Dashboard disponível</h2>
+                <p class="text-gray-500 text-sm mt-1">
+                    Última atualização: Hoje
+                </p>
+            </div>
+
+            <span class="px-3 py-1 text-white rounded"
+                  style="background: {{ data.cor }}">
+                Online
+            </span>
+        </div>
+
+        <!-- Área fake de dashboard (pra demo ficar bonita) -->
+        <div class="mt-6 h-64 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400">
+            Área do Dashboard (Power BI)
+        </div>
+
+        <!-- Botão -->
+        <div class="mt-6">
+            <button onclick="window.open('{{ data.link }}')"
+                    class="px-6 py-3 text-white rounded-lg"
+                    style="background: {{ data.cor }}">
+                Abrir Dashboard Completo
+            </button>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
