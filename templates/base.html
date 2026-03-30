@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Portal BI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+<header class="bg-[#004a99] text-white px-6 py-4 flex justify-between items-center shadow-md">
+    <h1 class="text-xl font-semibold">
+        Portal de BI - Central de Indicadores
+    </h1>
+
+    <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-white text-[#004a99] rounded-full flex items-center justify-center font-bold">
+            {{ user.displayName|first }}
+        </div>
+        <span class="font-medium">{{ user.displayName }}</span>
+        <button class="bg-white text-[#004a99] px-3 py-1 rounded-lg hover:bg-gray-200">
+            Logout
+        </button>
+    </div>
+</header>
+
+{% block content %}{% endblock %}
+
+<footer class="text-center text-gray-500 py-6 text-sm">
+    Versão Única da Verdade © 2026 - Iniciativa de Governança de Dados
+</footer>
+
+</body>
+</html>
