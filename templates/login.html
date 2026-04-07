@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Portal BI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * { font-family: 'Century Gothic', 'CenturyGothic', AppleGothic, 'Trebuchet MS', sans-serif; }
+    </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center bg-[#201547]">
+
+    <!-- Círculos decorativos (grafismo Spassu) -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <svg class="absolute -right-32 -top-32 w-[600px] h-[600px] opacity-10" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="300" cy="300" r="200" stroke="white" stroke-width="1.5" stroke-dasharray="4 8"/>
+            <circle cx="300" cy="300" r="150" stroke="white" stroke-width="1" stroke-dasharray="3 10"/>
+            <circle cx="300" cy="300" r="100" stroke="white" stroke-width="0.8" stroke-dasharray="2 12"/>
+        </svg>
+        <svg class="absolute -left-24 -bottom-24 w-[400px] h-[400px] opacity-10" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="200" r="150" stroke="white" stroke-width="1.2" stroke-dasharray="4 8"/>
+            <circle cx="200" cy="200" r="100" stroke="white" stroke-width="0.8" stroke-dasharray="3 10"/>
+        </svg>
+    </div>
+
+    <div class="relative w-full max-w-md px-4">
+
+        <!-- Logo -->
+        <div class="text-center mb-10">
+            <img src="{% static 'logo.png' %}" alt="Spassu" class="h-12 object-contain mx-auto mb-4">
+            <p class="text-white/50 text-sm tracking-widest uppercase">Portal de BI &mdash; Central de Indicadores</p>
+        </div>
+
+        <!-- Card -->
+        <div class="bg-white rounded-2xl shadow-2xl p-8">
+
+            <h2 class="text-xl font-bold text-[#201547] mb-1">Bem-vindo</h2>
+            <p class="text-sm text-gray-400 mb-7">Use sua conta corporativa Microsoft para acessar.</p>
+
+            <a href="/auth/redirect/"
+               class="flex items-center justify-center gap-3 w-full border border-gray-200 hover:bg-gray-50 text-gray-700 font-medium py-3 rounded-xl transition-colors">
+                <svg width="20" height="20" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="9" height="9" fill="#F25022"/>
+                    <rect x="11" y="1" width="9" height="9" fill="#7FBA00"/>
+                    <rect x="1" y="11" width="9" height="9" fill="#00A4EF"/>
+                    <rect x="11" y="11" width="9" height="9" fill="#FFB900"/>
+                </svg>
+                Entrar com Microsoft
+            </a>
+
+            {% if error %}
+            <p class="mt-4 text-sm text-red-500 text-center">{{ error }}</p>
+            {% endif %}
+
+        </div>
+
+        <p class="text-center text-white/30 text-xs mt-8">
+            Versão Única da Verdade &copy; 2026 &mdash; Iniciativa de Governança de Dados
+        </p>
+
+    </div>
+
+</body>
+</html>
