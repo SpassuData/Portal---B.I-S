@@ -59,51 +59,100 @@ def home(request):
 def area(request, area):
 
     areas = {
-        'rh': {
-            'titulo': 'Gestão de Jornada',
+        'people': {
+            'titulo': 'People Analytics',
             'cor': 'bg-[#FA4616]',
+            'em_construcao': False,
             'dashboards': [
                 {
-                    'nome': 'Horas Extras',
-                    'descricao': 'Análise de horas extras',
-                    'link': settings.DASHBOARD_RH
+                    'nome': 'Painel RH',
+                    'descricao': 'Visão geral de indicadores de RH',
+                    'link': "https://app.powerbi.com/groups/16c484dd-1fde-44ee-857e-06627ee01d99/reports/0336e46b-d67c-4e9b-b5d4-b10471623cef/93cdeb5027554930ab01?experience=power-bi"
                 },
                 {
-                    'nome': 'Absenteísmo',
-                    'descricao': 'Faltas e atrasos',
-                    'link': settings.DASHBOARD_RH
-                }
+                    'nome': 'Currículos',
+                    'descricao': 'Análise de banco de talentos',
+                    'link': ""
+                },
+                {
+                    'nome': 'Treinamentos',
+                    'descricao': 'Acompanhamento de capacitações',
+                    'link': "https://app.powerbi.com/groups/16c484dd-1fde-44ee-857e-06627ee01d99/reports/900f6d6c-ef09-454b-aef5-9ca0e8d4d7b1/ReportSection661e3c29aaf256694e5f?experience=power-bi"
+                },
+                {
+                    'nome': 'PCDs',
+                    'descricao': 'Indicadores de inclusão e diversidade',
+                    'link': "https://app.powerbi.com/groups/16c484dd-1fde-44ee-857e-06627ee01d99/reports/0336e46b-d67c-4e9b-b5d4-b10471623cef/2867187662753bf69123?experience=power-bi"
+                },
             ]
         },
 
-        'fin': {
-            'titulo': 'Gestão Financeira',
+        'dp': {
+            'titulo': 'DP Analytics',
             'cor': 'bg-[#201547]',
+            'em_construcao': False,
             'dashboards': [
                 {
-                    'nome': 'DRE',
-                    'descricao': 'Demonstrativo de resultado',
-                    'link': settings.DASHBOARD_FIN
+                    'nome': 'Folha de Pagamento',
+                    'descricao': 'Análise e evolução da folha',
+                    'link': "https://app.powerbi.com/groups/941e43fd-d3b7-467f-b090-d566237a3913/reports/a1cf9489-2c5a-466f-bae7-489de32fbe9c?experience=power-bi"
                 },
                 {
-                    'nome': 'Fator K',
-                    'descricao': 'Indicadores estratégicos',
-                    'link': settings.DASHBOARD_FIN
-                }
+                    'nome': 'Análise DP',
+                    'descricao': 'Indicadores do departamento pessoal',
+                    'link': "https://app.powerbi.com/groups/c885bc43-9568-4226-a98d-4212ce0e493f/reports/97c3440b-5537-4f2b-b64d-ff0736adacb7/80d96b61b71e5d3755d0?experience=power-bi"
+                },
             ]
         },
 
-        'op': {
-            'titulo': 'Eficiência Operacional',
-            'cor': 'bg-[#DBE442]',
+        'remar': {
+            'titulo': 'Performance & Resultados',
+            'cor': 'bg-[#201547]',
+            'em_construcao': False,
             'dashboards': [
                 {
-                    'nome': 'Projetos',
-                    'descricao': 'Status dos projetos',
-                    'link': settings.DASHBOARD_OP
-                }
+                    'nome': 'Gerentes',
+                    'descricao': 'Resultados por gerência — REMAR',
+                    'link': settings.DASHBOARD_REMAR_GERENTES
+                },
+                {
+                    'nome': 'Diretoria',
+                    'descricao': 'Resultados executivos — REMAR',
+                    'link': settings.DASHBOARD_REMAR_DIRETORIA
+                },
             ]
-        }
+        },
+
+        'rampup': {
+            'titulo': 'Ramp Up & Performance',
+            'cor': 'bg-[#D9D9D6]',
+            'em_construcao': True,
+            'dashboards': [
+                {
+                    'nome': 'Acompanhamento',
+                    'descricao': 'Evolução e performance de novos colaboradores',
+                    'link': settings.DASHBOARD_RAMPUP_ACOMPANHAMENTO
+                },
+            ]
+        },
+
+        'workforce': {
+            'titulo': 'Workforce Analytics',
+            'cor': 'bg-[#DBE442]',
+            'em_construcao': False,
+            'dashboards': [
+                {
+                    'nome': 'Visão Geral',
+                    'descricao': 'Panorama da força de trabalho',
+                    'link': settings.DASHBOARD_WORKFORCE_VISAO
+                },
+                {
+                    'nome': 'Produtividade',
+                    'descricao': 'Dados de produtividade — Meu Spassu',
+                    'link': settings.DASHBOARD_WORKFORCE_PRODUTIVIDADE
+                },
+            ]
+        },
     }
 
     data = areas.get(area)

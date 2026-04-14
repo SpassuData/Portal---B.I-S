@@ -11,12 +11,10 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <!-- RH -->
-        <a href="/area/rh/"
+        <!-- People Analytics -->
+        <a href="/area/people/"
            class="group bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 overflow-hidden">
-
             <div class="h-1.5 bg-[#FA4616]"></div>
-
             <div class="p-6">
                 <div class="flex items-start justify-between mb-4">
                     <div class="w-11 h-11 rounded-xl bg-orange-50 flex items-center justify-center">
@@ -29,26 +27,96 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                     </svg>
                 </div>
-
-                <h3 class="text-lg font-semibold text-[#201547]">Gestão de Jornada</h3>
-                <p class="text-gray-400 text-sm mt-1">Indicadores de RH, Folha e Horas Extras</p>
-
+                <h3 class="text-lg font-semibold text-[#201547]">People Analytics</h3>
+                <p class="text-gray-400 text-sm mt-1">Painel RH, Currículos, Treinamentos e PCDs</p>
                 <div class="mt-4 pt-4 border-t border-gray-50 flex items-center gap-1.5">
                     <span class="w-1.5 h-1.5 rounded-full bg-[#FA4616]"></span>
+                    <span class="text-xs text-gray-400">4 dashboards</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- DP Analytics -->
+        <a href="/area/dp/"
+           class="group bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 overflow-hidden">
+            <div class="h-1.5 bg-[#201547]"></div>
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="w-11 h-11 rounded-xl bg-indigo-50 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-[#201547]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                    </div>
+                    <svg class="w-4 h-4 text-gray-200 group-hover:text-[#201547] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-semibold text-[#201547]">DP Analytics</h3>
+                <p class="text-gray-400 text-sm mt-1">Folha de Pagamento e Análise do DP</p>
+                <div class="mt-4 pt-4 border-t border-gray-50 flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#201547]"></span>
                     <span class="text-xs text-gray-400">2 dashboards</span>
                 </div>
             </div>
         </a>
 
-        <!-- Financeiro -->
-        <a href="/area/fin/"
+        <!-- Performance & Resultados (REMAR) -->
+        <a href="/area/remar/"
            class="group bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 overflow-hidden">
-
             <div class="h-1.5 bg-[#201547]"></div>
-
             <div class="p-6">
                 <div class="flex items-start justify-between mb-4">
                     <div class="w-11 h-11 rounded-xl bg-indigo-50 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-[#201547]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                  d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                        </svg>
+                    </div>
+                    <svg class="w-4 h-4 text-gray-200 group-hover:text-[#201547] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-semibold text-[#201547]">Performance & Resultados</h3>
+                <p class="text-gray-400 text-sm mt-1">Indicadores REMAR para Gerentes e Diretoria</p>
+                <div class="mt-4 pt-4 border-t border-gray-50 flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#201547]"></span>
+                    <span class="text-xs text-gray-400">2 dashboards</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Ramp Up & Performance (em construção) -->
+        <div class="relative bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden opacity-70 cursor-not-allowed">
+            <div class="h-1.5 bg-[#D9D9D6]"></div>
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="w-11 h-11 rounded-xl bg-gray-50 flex items-center justify-center">
+                        <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                                  d="M15 17H9m6 0a6 6 0 10-6 0m6 0v1a2 2 0 11-4 0v-1M12 3v1"/>
+                        </svg>
+                    </div>
+                    <span class="text-xs bg-gray-100 text-gray-400 px-2 py-0.5 rounded-full font-medium">
+                        Em construção
+                    </span>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-400">Ramp Up & Performance</h3>
+                <p class="text-gray-300 text-sm mt-1">Acompanhamento de novos colaboradores</p>
+                <div class="mt-4 pt-4 border-t border-gray-50 flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gray-300"></span>
+                    <span class="text-xs text-gray-300">1 dashboard</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Workforce Analytics -->
+        <a href="/area/workforce/"
+           class="group bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 overflow-hidden">
+            <div class="h-1.5 bg-[#DBE442]"></div>
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-4">
+                    <div class="w-11 h-11 rounded-xl bg-yellow-50 flex items-center justify-center">
                         <svg class="w-6 h-6 text-[#201547]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
                                   d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
@@ -58,43 +126,11 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                     </svg>
                 </div>
-
-                <h3 class="text-lg font-semibold text-[#201547]">Gestão Financeira</h3>
-                <p class="text-gray-400 text-sm mt-1">DRE, Fator K e Provisões estratégicas</p>
-
-                <div class="mt-4 pt-4 border-t border-gray-50 flex items-center gap-1.5">
-                    <span class="w-1.5 h-1.5 rounded-full bg-[#201547]"></span>
-                    <span class="text-xs text-gray-400">2 dashboards</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- Operacional -->
-        <a href="/area/op/"
-           class="group bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 overflow-hidden">
-
-            <div class="h-1.5 bg-[#DBE442]"></div>
-
-            <div class="p-6">
-                <div class="flex items-start justify-between mb-4">
-                    <div class="w-11 h-11 rounded-xl bg-yellow-50 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-[#201547]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                                  d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                        </svg>
-                    </div>
-                    <svg class="w-4 h-4 text-gray-200 group-hover:text-[#201547] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                    </svg>
-                </div>
-
-                <h3 class="text-lg font-semibold text-[#201547]">Eficiência Operacional</h3>
-                <p class="text-gray-400 text-sm mt-1">Status de projetos e integração de sistemas</p>
-
+                <h3 class="text-lg font-semibold text-[#201547]">Workforce Analytics</h3>
+                <p class="text-gray-400 text-sm mt-1">Visão Geral e Produtividade — Meu Spassu</p>
                 <div class="mt-4 pt-4 border-t border-gray-50 flex items-center gap-1.5">
                     <span class="w-1.5 h-1.5 rounded-full bg-[#DBE442]"></span>
-                    <span class="text-xs text-gray-400">1 dashboard</span>
+                    <span class="text-xs text-gray-400">2 dashboards</span>
                 </div>
             </div>
         </a>
