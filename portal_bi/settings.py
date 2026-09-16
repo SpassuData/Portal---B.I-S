@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 from pathlib import Path
 
-load_dotenv(override=True)
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -32,12 +32,6 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [BASE_DIR / 'templates'],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.request',
-            ],
-        },
     },
 ]
 
@@ -51,31 +45,19 @@ STORAGES = {
     },
 }
 
-# Azure
-AZURE_CLIENT_ID = os.getenv("AZURE_CLIENT_ID")
-AZURE_CLIENT_SECRET = os.getenv("AZURE_CLIENT_SECRET")
-AZURE_TENANT_ID = os.getenv("AZURE_TENANT_ID")
+# Azure AD / Microsoft Entra ID (login via Microsoft)
+# Usamos os.environ[...] (em vez de os.getenv) de propósito: se uma dessas faltar,
+# o app quebra já na inicialização com um erro claro, em vez de silenciosamente
+# virar None e gerar um erro confuso da Microsoft (ex.: AADSTS90102) mais tarde.
+AZURE_CLIENT_ID = os.environ['AZURE_CLIENT_ID']
+AZURE_CLIENT_SECRET = os.environ['AZURE_CLIENT_SECRET']
+AZURE_TENANT_ID = os.environ['AZURE_TENANT_ID']
+REDIRECT_URI = os.environ['REDIRECT_URI']
+
 AZURE_AUTHORITY = f"https://login.microsoftonline.com/{AZURE_TENANT_ID}"
 AZURE_SCOPE = ["User.Read"]
-REDIRECT_URI = os.getenv("REDIRECT_URI")
 
-# Dashboards - People Analytics
-DASHBOARD_PEOPLE_RH           = os.getenv("DASHBOARD_PEOPLE_RH")
-DASHBOARD_PEOPLE_CURRICULOS   = os.getenv("DASHBOARD_PEOPLE_CURRICULOS")
-DASHBOARD_PEOPLE_TREINAMENTOS = os.getenv("DASHBOARD_PEOPLE_TREINAMENTOS")
-DASHBOARD_PEOPLE_PCDS         = os.getenv("DASHBOARD_PEOPLE_PCDS")
-
-# Dashboards - DP Analytics
-DASHBOARD_DP_FOLHA   = os.getenv("DASHBOARD_DP_FOLHA")
-DASHBOARD_DP_ANALISE = os.getenv("DASHBOARD_DP_ANALISE")
-
-# Dashboards - Performance & Resultados (REMAR)
-DASHBOARD_REMAR_GERENTES  = os.getenv("DASHBOARD_REMAR_GERENTES")
-DASHBOARD_REMAR_DIRETORIA = os.getenv("DASHBOARD_REMAR_DIRETORIA")
-
-# Dashboards - Ramp Up & Performance
-DASHBOARD_RAMPUP_ACOMPANHAMENTO = os.getenv("DASHBOARD_RAMPUP_ACOMPANHAMENTO")
-
-# Dashboards - Workforce Analytics
-DASHBOARD_WORKFORCE_VISAO         = os.getenv("DASHBOARD_WORKFORCE_VISAO")
-DASHBOARD_WORKFORCE_PRODUTIVIDADE = os.getenv("DASHBOARD_WORKFORCE_PRODUTIVIDADE")
+# Dashboards
+DASHBOARD_RH = os.getenv("DASHBOARD_RH")
+DASHBOARD_FIN = os.getenv("DASHBOARD_FIN")
+DASHBOARD_OP = os.getenv("DASHBOARD_OP")
