@@ -2,8 +2,10 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.home),
     path('login/', views.login),
-    path('auth/callback/', views.authorized),
     path('logout/', views.logout),
+    path('auth/redirect/', views.auth_redirect),
+    path('auth/callback/', views.auth_callback),
+    path('', views.home),
+    path('area/<str:area>/', views.area),
 ]

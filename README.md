@@ -6,14 +6,17 @@ Aplicação web que consolida, em um único lugar, os links dos principais dashb
 
 O **Portal B.I-S** nasce da necessidade de centralizar o acesso aos diversos dashboards de Business Intelligence espalhados pela organização, evitando a dispersão de links e facilitando a navegação da equipe entre os relatórios utilizados com mais frequência.
 
+Os dashboards são organizados por área (People Analytics, DP Analytics, Performance & Resultados, Ramp Up, Workforce Analytics) e o acesso exige login com conta corporativa Microsoft.
+
 ## 🚀 Tecnologias
 
 - **Python** / **Django** — back-end e regras de negócio
+- **MSAL** — autenticação via Azure AD / Microsoft Entra ID
 - **HTML** (templates Django) — camada de apresentação
 - **WhiteNoise** — arquivos estáticos em produção
 - **Gunicorn** — servidor WSGI de produção
 
-> O projeto não usa banco de dados no momento (só exibe links estáticos configurados via variáveis de ambiente). Quando login/cadastro de dashboards forem implementados, será adicionado um banco (Postgres em produção).
+> O projeto não usa banco de dados (login e sessão não dependem de tabelas; a sessão é assinada via cookie). Se cadastro/administração de dashboards for implementado no futuro, um banco (Postgres em produção) pode ser adicionado.
 
 ## 📁 Estrutura do projeto
 
@@ -59,7 +62,7 @@ Portal---B.I-S/
    ```bash
    cp .env.example .env
    ```
-   > O `.env` nunca deve ser commitado (já está no `.gitignore`). Preencha `SECRET_KEY`, `ALLOWED_HOSTS` e os links `DASHBOARD_RH`/`DASHBOARD_FIN`/`DASHBOARD_OP`.
+   > O `.env` nunca deve ser commitado (já está no `.gitignore`). Preencha `SECRET_KEY`, `ALLOWED_HOSTS`, as credenciais `AZURE_CLIENT_ID`/`AZURE_CLIENT_SECRET`/`AZURE_TENANT_ID`/`REDIRECT_URI` e os links `DASHBOARD_*` de cada área. Veja `.env.example` para a lista completa.
 
 5. Rode o servidor de desenvolvimento
    ```bash
@@ -70,8 +73,8 @@ Portal---B.I-S/
 
 ## 🗺️ Roadmap
 
-- [ ] Cadastro e organização dos dashboards por categoria
-- [ ] Autenticação de usuários
+- [x] Organização dos dashboards por categoria
+- [x] Autenticação de usuários (Azure AD / Microsoft Entra ID)
 - [ ] Área administrativa para gerenciar links
 
 ## 🤝 Contribuindo

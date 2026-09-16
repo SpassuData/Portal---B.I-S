@@ -1,8 +1,29 @@
-__pycache__/
-*.pyc
-.env
-staticfiles/
+# Ambiente virtual
 venv/
+env/
 .venv/
+
+# Variáveis de ambiente
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Django
+db.sqlite3
+staticfiles/
+media/
 *.log
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
 .DS_Store
+Thumbs.db
+
+# Claude
+.claude/
