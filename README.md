@@ -10,18 +10,22 @@ O **Portal B.I-S** nasce da necessidade de centralizar o acesso aos diversos das
 
 - **Python** / **Django** — back-end e regras de negócio
 - **HTML** (templates Django) — camada de apresentação
-- **SQLite** — banco de dados (`db.sqlite3`)
+- **WhiteNoise** — arquivos estáticos em produção
+- **Gunicorn** — servidor WSGI de produção
+
+> O projeto não usa banco de dados no momento (só exibe links estáticos configurados via variáveis de ambiente). Quando login/cadastro de dashboards forem implementados, será adicionado um banco (Postgres em produção).
 
 ## 📁 Estrutura do projeto
 
 ```
 Portal---B.I-S/
-├── core/            # Configurações principais do projeto Django (settings, urls, wsgi/asgi)
-├── portal_bi/        # Aplicação principal (models, views, lógica do portal)
+├── core/            # App principal (views, urls, decorators)
+├── portal_bi/        # Configurações do projeto Django (settings, urls, wsgi/asgi)
 ├── templates/         # Templates HTML das páginas
-├── db.sqlite3         # Banco de dados local
+├── static/             # Arquivos estáticos (CSS, JS, imagens)
 ├── manage.py           # Script de gerenciamento do Django
-└── requeriments.txt    # Dependências do projeto
+├── requirements.txt    # Dependências do projeto
+└── .env.example         # Modelo das variáveis de ambiente necessárias
 ```
 
 ## ⚙️ Como rodar o projeto localmente
@@ -48,14 +52,14 @@ Portal---B.I-S/
 
 3. Instale as dependências
    ```bash
-   pip install -r requeriments.txt
+   pip install -r requirements.txt
    ```
-   > ⚠️ O arquivo `requeriments.txt` está vazio no momento. Adicione aqui as dependências do projeto (ex.: `Django`) assim que definidas.
 
-4. Aplique as migrações
+4. Copie o arquivo de variáveis de ambiente e preencha os valores
    ```bash
-   python manage.py migrate
+   cp .env.example .env
    ```
+   > O `.env` nunca deve ser commitado (já está no `.gitignore`). Preencha `SECRET_KEY`, `ALLOWED_HOSTS` e os links `DASHBOARD_RH`/`DASHBOARD_FIN`/`DASHBOARD_OP`.
 
 5. Rode o servidor de desenvolvimento
    ```bash
@@ -69,7 +73,6 @@ Portal---B.I-S/
 - [ ] Cadastro e organização dos dashboards por categoria
 - [ ] Autenticação de usuários
 - [ ] Área administrativa para gerenciar links
-- [ ] Documentar dependências em `requeriments.txt`
 
 ## 🤝 Contribuindo
 

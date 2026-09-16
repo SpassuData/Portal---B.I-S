@@ -6,9 +6,9 @@ load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-secret'
-DEBUG = True
-ALLOWED_HOSTS = []
+SECRET_KEY = os.environ['SECRET_KEY']
+DEBUG = os.getenv('DEBUG', 'False').lower() == 'true'
+ALLOWED_HOSTS = [h.strip() for h in os.getenv('ALLOWED_HOSTS', '').split(',') if h.strip()]
 
 INSTALLED_APPS = [
     'django.contrib.sessions',
@@ -18,8 +18,13 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
 ]
+
+# Sem banco de dados por enquanto (portal só exibe links estáticos).
+# Sessões assinadas via cookie, sem precisar de tabela django_session.
+SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
 
 ROOT_URLCONF = 'portal_bi.urls'
 
@@ -32,6 +37,13 @@ TEMPLATES = [
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+STORAGES = {
+    'staticfiles': {
+        'BACKEND': 'whitenoise.storage.CompressedManifestStaticFilesStorage',
+    },
+}
 
 # Azure
 AZURE_CLIENT_ID = os.getenv("AZURE_CLIENT_ID")
@@ -43,11 +55,3 @@ REDIRECT_URI = os.getenv("REDIRECT_URI")
 DASHBOARD_RH = os.getenv("DASHBOARD_RH")
 DASHBOARD_FIN = os.getenv("DASHBOARD_FIN")
 DASHBOARD_OP = os.getenv("DASHBOARD_OP")
-
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
